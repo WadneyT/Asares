@@ -1,11 +1,11 @@
 package service;
 
-import com.pratica.financas.dto.CadastroRequestDTO;
-import com.pratica.financas.dto.LoginRequestDTO;
-import com.pratica.financas.dto.TokenResponseDTO;
-import com.pratica.financas.model.Usuario;
-import com.pratica.financas.repository.UsuarioRepository;
-import com.pratica.financas.security.JwtUtil;
+import dto.CadastroRequestDTO;
+import dto.LoginRequestDTO;
+import dto.TokenResponseDTO;
+import model.Usuario;
+import repository.UsuarioRepository;
+import security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
