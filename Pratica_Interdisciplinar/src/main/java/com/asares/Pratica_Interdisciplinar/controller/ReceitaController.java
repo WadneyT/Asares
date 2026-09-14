@@ -1,7 +1,7 @@
 package com.asares.Pratica_Interdisciplinar.controller;
 
 import com.asares.Pratica_Interdisciplinar.dto.ReceitaRequestDTO;
-import com.asares.Pratica_Interdisciplinar.model.Receita;
+import com.asares.Pratica_Interdisciplinar.dto.ReceitaResponseDTO;
 import com.asares.Pratica_Interdisciplinar.service.ReceitaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,22 +15,27 @@ import java.util.List;
 @RestController
 @RequestMapping("/receitas")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:5173")
 public class ReceitaController {
 
     private final ReceitaService receitaService;
 
-    // US03
+    // US03 - Cadastrar receita
     @PostMapping
-    public ResponseEntity<Receita> cadastrar(@Valid @RequestBody ReceitaRequestDTO dto,
-                                              Authentication authentication) {
-        String email = authentication.getName(); // extraido do token JWT
-        Receita receita = receitaService.cadastrar(email, dto);
+    // 2. MUDANÇA: Alteramos ResponseEntity<Receita> para ResponseEntity<ReceitaResponseDTO>.
+    // Dessa forma, apenas os campos de receita serão enviados no JSON, sem carregar o Usuario em loop.
+    public ResponseEntity<ReceitaResponseDTO> cadastrar(@Valid @RequestBody ReceitaRequestDTO dto,
+                                                        Authentication authentication) {
+        String email = authentication.getName(); // extraído do token JWT
+        ReceitaResponseDTO receita = receitaService.cadastrar(email, dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(receita);
     }
 
+    // Listar receitas do usuário autenticado
     @GetMapping
-    public ResponseEntity<List<Receita>> listar(Authentication authentication) {
-        String email = authentication.getName();
+    // 3. MUDANÇA: Alteramos List<Receita> para List<ReceitaResponseDTO>.
+    public ResponseEntity<List<ReceitaResponseDTO>> listar(Authentication authentication) {
+        String email = authentication.getName(); // extraído do token JWT
         return ResponseEntity.ok(receitaService.listarPorUsuario(email));
     }
 }

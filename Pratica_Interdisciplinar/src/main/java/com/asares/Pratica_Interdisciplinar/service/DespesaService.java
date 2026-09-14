@@ -1,6 +1,7 @@
 package com.asares.Pratica_Interdisciplinar.service;
 
 import com.asares.Pratica_Interdisciplinar.dto.DespesaRequestDTO;
+import com.asares.Pratica_Interdisciplinar.dto.DespesaResponseDTO;
 import com.asares.Pratica_Interdisciplinar.model.Despesa;
 import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import com.asares.Pratica_Interdisciplinar.repository.DespesaRepository;
@@ -20,7 +21,7 @@ public class DespesaService {
 
     // US04 - Cadastrar despesa
     @Transactional
-    public Despesa cadastrar(String emailUsuarioLogado, DespesaRequestDTO dto) {
+    public DespesaResponseDTO cadastrar(String emailUsuarioLogado, DespesaRequestDTO dto) {
         Usuario usuario = buscarUsuario(emailUsuarioLogado);
 
         Despesa despesa = Despesa.builder()
@@ -32,12 +33,17 @@ public class DespesaService {
                 .usuario(usuario)
                 .build();
 
-        return despesaRepository.save(despesa);
+        Despesa despesaSalva = despesaRepository.save(despesa);
+        return new DespesaResponseDTO(despesaSalva);
     }
 
-    public List<Despesa> listarPorUsuario(String emailUsuarioLogado) {
+    @Transactional(readOnly = true)
+    public List<DespesaResponseDTO> listarPorUsuario(String emailUsuarioLogado) {
         Usuario usuario = buscarUsuario(emailUsuarioLogado);
-        return despesaRepository.findByUsuarioIdOrderByDataDesc(usuario.getId());
+        return despesaRepository.findByUsuarioIdOrderByDataDesc(usuario.getId())
+                .stream()
+                .map(DespesaResponseDTO::new)
+                .toList();
     }
 
     private Usuario buscarUsuario(String email) {
@@ -45,4 +51,3 @@ public class DespesaService {
                 .orElseThrow(() -> new IllegalStateException("Usuario logado nao encontrado"));
     }
 }
-

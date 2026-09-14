@@ -1,6 +1,8 @@
 package com.asares.Pratica_Interdisciplinar.service;
 
 import com.asares.Pratica_Interdisciplinar.dto.ReceitaRequestDTO;
+// 1. IMPORTANTE: Importamos o DTO de resposta para evitar o retorno da entidade direta
+import com.asares.Pratica_Interdisciplinar.dto.ReceitaResponseDTO;
 import com.asares.Pratica_Interdisciplinar.model.Receita;
 import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import com.asares.Pratica_Interdisciplinar.repository.ReceitaRepository;
@@ -20,7 +22,8 @@ public class ReceitaService {
 
     // US03 - Cadastrar receita
     @Transactional
-    public Receita cadastrar(String emailUsuarioLogado, ReceitaRequestDTO dto) {
+    // 2. MUDANÇA: O retorno mudou de Receita para ReceitaResponseDTO
+    public ReceitaResponseDTO cadastrar(String emailUsuarioLogado, ReceitaRequestDTO dto) {
         Usuario usuario = buscarUsuario(emailUsuarioLogado);
 
         Receita receita = Receita.builder()
@@ -31,12 +34,22 @@ public class ReceitaService {
                 .usuario(usuario)
                 .build();
 
-        return receitaRepository.save(receita);
+        Receita receitaSalva = receitaRepository.save(receita);
+        
+        // 3. MUDANÇA: Instancia o DTO passando a receita salva, isolando o relacionamento de Usuario
+        return new ReceitaResponseDTO(receitaSalva);
     }
 
-    public List<Receita> listarPorUsuario(String emailUsuarioLogado) {
+    // 4. MUDANÇA: O retorno da listagem agora é List<ReceitaResponseDTO>
+    @Transactional(readOnly = true)
+    public List<ReceitaResponseDTO> listarPorUsuario(String emailUsuarioLogado) {
         Usuario usuario = buscarUsuario(emailUsuarioLogado);
-        return receitaRepository.findByUsuarioIdOrderByDataDesc(usuario.getId());
+        
+        // 5. MUDANÇA: Converte cada entidade Receita da lista para um ReceitaResponseDTO
+        return receitaRepository.findByUsuarioIdOrderByDataDesc(usuario.getId())
+                .stream()
+                .map(ReceitaResponseDTO::new)
+                .toList();
     }
 
     private Usuario buscarUsuario(String email) {
@@ -44,4 +57,3 @@ public class ReceitaService {
                 .orElseThrow(() -> new IllegalStateException("Usuario logado nao encontrado"));
     }
 }
-
