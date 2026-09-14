@@ -1,6 +1,6 @@
 package com.asares.Pratica_Interdisciplinar.config;
 
-import security.JwtAuthFilter;
+import com.asares.Pratica_Interdisciplinar.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
