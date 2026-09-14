@@ -1,6 +1,6 @@
-package java.security;
+package com.asares.Pratica_Interdisciplinar.security;
 
-import java.service.CustomUserDetailsService;
+import com.asares.Pratica_Interdisciplinar.service.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package model;
+package com.asares.Pratica_Interdisciplinar.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
-package service;
+package com.asares.Pratica_Interdisciplinar.service;
 
-import dto.DespesaRequestDTO;
-import model.Despesa;
-import model.Usuario;
+import com.asares.Pratica_Interdisciplinar.dto.DespesaRequestDTO;
+import com.asares.Pratica_Interdisciplinar.model.Despesa;
+import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import repository.DespesaRepository;
 import repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;

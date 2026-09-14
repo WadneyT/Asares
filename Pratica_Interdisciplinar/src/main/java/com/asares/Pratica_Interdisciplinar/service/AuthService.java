@@ -1,9 +1,9 @@
-package service;
+package com.asares.Pratica_Interdisciplinar.service;
 
-import dto.CadastroRequestDTO;
-import dto.LoginRequestDTO;
-import dto.TokenResponseDTO;
-import model.Usuario;
+import com.asares.Pratica_Interdisciplinar.dto.CadastroRequestDTO;
+import com.asares.Pratica_Interdisciplinar.dto.LoginRequestDTO;
+import com.asares.Pratica_Interdisciplinar.dto.TokenResponseDTO;
+import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import repository.UsuarioRepository;
 import security.JwtUtil;
 import lombok.RequiredArgsConstructor;

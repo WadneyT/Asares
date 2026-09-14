@@ -1,4 +1,4 @@
-package dto;
+package com.asares.Pratica_Interdisciplinar.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record ReceitaRequestDTO(
+public record DespesaRequestDTO(
 
         @NotBlank(message = "Descricao e obrigatoria")
         String descricao,
@@ -19,6 +19,8 @@ public record ReceitaRequestDTO(
         @NotNull(message = "Data e obrigatoria")
         LocalDate data,
 
-        String categoria
+        String categoria,
+
+        Boolean paga
 ) {
 }

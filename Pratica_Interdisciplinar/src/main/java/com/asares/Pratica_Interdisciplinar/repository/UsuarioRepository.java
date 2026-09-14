@@ -1,6 +1,6 @@
-package java.repository;
+package com.asares.Pratica_Interdisciplinar.repository;
 
-import java.model.Usuario;
+import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

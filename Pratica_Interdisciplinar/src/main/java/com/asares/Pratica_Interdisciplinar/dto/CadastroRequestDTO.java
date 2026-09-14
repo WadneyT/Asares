@@ -1,4 +1,4 @@
-package dto;
+package com.asares.Pratica_Interdisciplinar.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

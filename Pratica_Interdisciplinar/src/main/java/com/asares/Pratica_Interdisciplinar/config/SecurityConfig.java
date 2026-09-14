@@ -1,4 +1,4 @@
-package config;
+package com.asares.Pratica_Interdisciplinar.config;
 
 import security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
-package java.controller;
+package com.asares.Pratica_Interdisciplinar.controller;
 
-import java.dto.DespesaRequestDTO;
-import java.model.Despesa;
-import java.service.DespesaService;
+import com.asares.Pratica_Interdisciplinar.dto.DespesaRequestDTO;
+import com.asares.Pratica_Interdisciplinar.model.Despesa;
+import com.asares.Pratica_Interdisciplinar.service.DespesaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

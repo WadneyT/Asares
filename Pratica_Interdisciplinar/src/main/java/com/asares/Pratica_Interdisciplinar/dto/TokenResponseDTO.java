@@ -1,4 +1,4 @@
-package dto;
+package com.asares.Pratica_Interdisciplinar.dto;
 
 public record TokenResponseDTO(String token,
                                String tipo,

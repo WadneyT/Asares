@@ -1,6 +1,6 @@
-package java.repository;
+package com.asares.Pratica_Interdisciplinar.repository;
 
-import java.model.Despesa;
+import com.asares.Pratica_Interdisciplinar.model.Despesa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

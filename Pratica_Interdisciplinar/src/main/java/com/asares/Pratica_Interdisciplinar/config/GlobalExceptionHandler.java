@@ -1,4 +1,4 @@
-package config;
+package com.asares.Pratica_Interdisciplinar.config;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

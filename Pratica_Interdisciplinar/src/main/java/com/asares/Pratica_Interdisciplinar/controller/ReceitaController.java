@@ -1,8 +1,8 @@
-package java.controller;
+package com.asares.Pratica_Interdisciplinar.controller;
 
-import java.dto.ReceitaRequestDTO;
-import java.model.Receita;
-import java.service.ReceitaService;
+import com.asares.Pratica_Interdisciplinar.dto.ReceitaRequestDTO;
+import com.asares.Pratica_Interdisciplinar.model.Receita;
+import com.asares.Pratica_Interdisciplinar.service.ReceitaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
-package service;
+package com.asares.Pratica_Interdisciplinar.service;
 
-import model.Usuario;
+import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
@@ -30,3 +30,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         );
     }
 }
+

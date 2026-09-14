@@ -1,4 +1,4 @@
-package java.security;
+package com.asares.Pratica_Interdisciplinar.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,8 +1,8 @@
-package service;
+package com.asares.Pratica_Interdisciplinar.service;
 
-import dto.ReceitaRequestDTO;
-import model.Receita;
-import model.Usuario;
+import com.asares.Pratica_Interdisciplinar.dto.ReceitaRequestDTO;
+import com.asares.Pratica_Interdisciplinar.model.Receita;
+import com.asares.Pratica_Interdisciplinar.model.Usuario;
 import repository.ReceitaRepository;
 import repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
