@@ -73,7 +73,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // Permite a origem do seu frontend Vite
-        configuration.setAllowedOrigins(List.of("http://localhost:5173"));
+        configuration.setAllowedOrigins(List.of("http://localhost:5174"));
         // Permite os verbos HTTP utilizados
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         // Permite todos os cabecalhos, em especial o Authorization (Bearer token)

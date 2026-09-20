@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Pratica_Interdisciplinar.iml" filepath="$PROJECT_DIR$/.idea/Pratica_Interdisciplinar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Asares.iml" filepath="$PROJECT_DIR$/.idea/Asares.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pratica_Interdisciplinar/Pratica_Interdisciplinar.iml" filepath="$PROJECT_DIR$/Pratica_Interdisciplinar/Pratica_Interdisciplinar.iml" />
     </modules>
   </component>
 </project>
